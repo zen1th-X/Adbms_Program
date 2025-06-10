@@ -1,0 +1,46 @@
+Report Generating
+
+Procedure:
+1. Create an excel file template.
+2. Save the file inside the debug folder.
+3. Rename the sheet. (optional)
+4. Add project reference (Microsoft Excel 16.0 Library)
+5. Create the code.
+
+ Dim xlapp As New Excel.Application
+ Dim wkb As Excel.Workbook
+ Dim wks As Excel.Worksheet
+
+wkb = xlapp.Workbooks.Add(Application.StartupPath & "\report_account.xlsx")
+        wks = wkb.Worksheets.Item("account")
+        rs = New ADODB.Recordset
+        With rs
+            If .State = 1 Then .Close()
+            If cbofilter.SelectedIndex = 0 Then
+                .Open("Select * from tbl_accounts where ACC_UNAME like '%" + txtsearch.Text + "%'", cn, 1, 2)
+            ElseIf cbofilter.SelectedIndex = 1 Then
+                .Open("Select * from tbl_accounts where ACC_LAST like '%" + txtsearch.Text + "%'", cn, 1, 2)
+            ElseIf cbofilter.SelectedIndex = 2 Then
+                .Open("Select * from tbl_accounts where ACC_FIRST like '%" + txtsearch.Text + "%'", cn, 1, 2)
+            ElseIf cbofilter.SelectedIndex = 3 Then
+                .Open("Select * from tbl_accounts where ACC_EMAIL like '%" + txtsearch.Text + "%'", cn, 1, 2)
+            Else
+                .Open("Select * from tbl_accounts", cn, 1, 2)
+            End If
+            Dim myrows As Integer = 9
+            While .EOF = False
+                wks.Cells(myrows, 1).value = .Fields("ACC_UNAME").Value
+                wks.Cells(myrows, 2).value = .Fields("ACC_LAST").Value
+                wks.Cells(myrows, 3).value = .Fields("ACC_FIRST").Value
+                wks.Cells(myrows, 4).value = .Fields("ACC_EMAIL").Value
+                myrows = myrows + 1
+                .MoveNext()
+            End While
+            .Close()
+        End With
+        xlapp.Visible = True
+        wks.PrintPreview()
+        wks.Visible = True
+        wkb.Close()
+        xlapp.Quit()
+
