@@ -392,7 +392,7 @@ Partial Class frmAccount
         Me.btnlogin.Name = "btnlogin"
         Me.btnlogin.Size = New System.Drawing.Size(168, 23)
         Me.btnlogin.TabIndex = 40
-        Me.btnlogin.Text = "Log-In"
+        Me.btnlogin.Text = "Back"
         Me.btnlogin.UseVisualStyleBackColor = True
         '
         'frmAccount

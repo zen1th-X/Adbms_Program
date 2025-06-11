@@ -82,7 +82,6 @@ Partial Class formStudent
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -446,7 +445,7 @@ Partial Class formStudent
         '
         Me.btnadd.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnadd.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnadd.Location = New System.Drawing.Point(1043, 152)
+        Me.btnadd.Location = New System.Drawing.Point(1044, 168)
         Me.btnadd.Name = "btnadd"
         Me.btnadd.Size = New System.Drawing.Size(166, 34)
         Me.btnadd.TabIndex = 43
@@ -457,7 +456,7 @@ Partial Class formStudent
         '
         Me.btnupdate.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnupdate.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnupdate.Location = New System.Drawing.Point(1043, 192)
+        Me.btnupdate.Location = New System.Drawing.Point(1044, 208)
         Me.btnupdate.Name = "btnupdate"
         Me.btnupdate.Size = New System.Drawing.Size(166, 34)
         Me.btnupdate.TabIndex = 44
@@ -468,7 +467,7 @@ Partial Class formStudent
         '
         Me.btndelete.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btndelete.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btndelete.Location = New System.Drawing.Point(1043, 272)
+        Me.btndelete.Location = New System.Drawing.Point(1044, 288)
         Me.btndelete.Name = "btndelete"
         Me.btndelete.Size = New System.Drawing.Size(170, 34)
         Me.btndelete.TabIndex = 45
@@ -479,7 +478,7 @@ Partial Class formStudent
         '
         Me.btnclear.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnclear.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnclear.Location = New System.Drawing.Point(1043, 232)
+        Me.btnclear.Location = New System.Drawing.Point(1044, 248)
         Me.btnclear.Name = "btnclear"
         Me.btnclear.Size = New System.Drawing.Size(166, 34)
         Me.btnclear.TabIndex = 46
@@ -490,7 +489,7 @@ Partial Class formStudent
         '
         Me.btnexit.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnexit.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnexit.Location = New System.Drawing.Point(1043, 312)
+        Me.btnexit.Location = New System.Drawing.Point(1045, 327)
         Me.btnexit.Name = "btnexit"
         Me.btnexit.Size = New System.Drawing.Size(170, 34)
         Me.btnexit.TabIndex = 47
@@ -638,25 +637,14 @@ Partial Class formStudent
         '
         'Button1
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.BackColor = System.Drawing.Color.IndianRed
         Me.Button1.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1047, 17)
+        Me.Button1.Location = New System.Drawing.Point(1045, 72)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(166, 34)
-        Me.Button1.TabIndex = 62
-        Me.Button1.Text = "TEACHER"
+        Me.Button1.Size = New System.Drawing.Size(171, 39)
+        Me.Button1.TabIndex = 67
+        Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Button2.Font = New System.Drawing.Font("Segoe UI Black", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(1043, 62)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(166, 34)
-        Me.Button2.TabIndex = 63
-        Me.Button2.Text = "GRADES"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'formStudent
         '
@@ -664,7 +652,6 @@ Partial Class formStudent
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Lavender
         Me.ClientSize = New System.Drawing.Size(1244, 703)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.Label33)
@@ -794,5 +781,4 @@ Partial Class formStudent
     Friend WithEvents Label33 As Label
     Friend WithEvents Label35 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
 End Class

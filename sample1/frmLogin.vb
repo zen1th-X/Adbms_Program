@@ -16,6 +16,7 @@
     End Sub
 
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
+        ' Input validation
         If txtusername.Text = "" Then
             MsgBox("Enter username", vbInformation, "Missing")
             txtusername.Focus()
@@ -25,18 +26,33 @@
             txtpassword.Focus()
             Exit Sub
         End If
+
+        ' Admin login (hardcoded)
+        If txtusername.Text = "admin" And txtpassword.Text = "admin" Then
+            formAdmin.Show()
+            Me.Hide()
+            Exit Sub
+        End If
+
+        ' Database login
         rs = New ADODB.Recordset
-        With rs
-            If .State = 1 Then Close()
-            .Open("Select * from tbl_accounts where ACC_UNAME='" + txtusername.Text + "' and ACC_PWORD='" + txtpassword.Text + "'", cn, 1, 2)
-            If .EOF = True Then
-                MsgBox("Log in Failed", vbInformation, "Failed")
-                Exit Sub
-            End If
+        If cn.State = 1 Then cn.Close()
+        cn.Open() ' ensure the connection is open
+
+        rs.Open("SELECT * FROM tbl_accounts WHERE ACC_UNAME='" & txtusername.Text & "' AND ACC_PWORD='" & txtpassword.Text & "'", cn, 1, 2)
+
+        If rs.EOF Then
+            MsgBox("Log in Failed", vbInformation, "Failed")
+            rs.Close()
+            cn.Close()
+            Exit Sub
+        Else
             MsgBox("Log in Successful", vbInformation, "Success")
-            .Close()
-        End With
-        Me.Hide()
-        formStudent.Show()
+            rs.Close()
+            cn.Close()
+            frmgrades.Show()
+            Me.Hide()
+        End If
     End Sub
+
 End Class

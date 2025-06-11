@@ -59,6 +59,8 @@ Partial Class frmgrades
         Me.Label22 = New System.Windows.Forms.Label()
         Me.btnupload = New System.Windows.Forms.Button()
         Me.openfile = New System.Windows.Forms.OpenFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label6
@@ -420,11 +422,33 @@ Partial Class frmgrades
         '
         Me.openfile.FileName = "OpenFileDialog1"
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(656, 415)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(168, 23)
+        Me.Button1.TabIndex = 52
+        Me.Button1.Text = "Exit"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(656, 386)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(168, 23)
+        Me.Button2.TabIndex = 53
+        Me.Button2.Text = "Log - out"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'frmgrades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(853, 450)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnupload)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.txtinstructor)
@@ -505,4 +529,6 @@ Partial Class frmgrades
     Friend WithEvents Label22 As Label
     Friend WithEvents btnupload As Button
     Friend WithEvents openfile As OpenFileDialog
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

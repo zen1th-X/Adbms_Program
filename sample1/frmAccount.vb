@@ -255,7 +255,7 @@ Public Class frmAccount
     End Sub
 
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
-        frmLogin.Show()
+        formAdmin.Show()
         Me.Hide()
     End Sub
 End Class
